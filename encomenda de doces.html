@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encomenda de Doces</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #fff1f5;
+            color: #4a2c35;
+            padding: 30px 15px;
+        }
+
+        .container {
+            max-width: 650px;
+            margin: auto;
+            background: white;
+            padding: 30px;
+            border-radius: 18px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #d94f7d;
+            margin-bottom: 10px;
+        }
+
+        .subtitulo {
+            text-align: center;
+            color: #777;
+            margin-bottom: 25px;
+        }
+
+        .campo {
+            margin-bottom: 18px;
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 7px;
+        }
+
+        input,
+        select,
+        textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 15px;
+        }
+
+        input:focus,
+        select:focus,
+        textarea:focus {
+            outline: none;
+            border-color: #d94f7d;
+        }
+
+        .doces {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+        }
+
+        .doce {
+            border: 1px solid #eee;
+            padding: 12px;
+            border-radius: 10px;
+            background: #fff8fa;
+        }
+
+        .doce label {
+            font-weight: normal;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin: 0;
+        }
+
+        .doce input {
+            width: auto;
+        }
+
+        button {
+            width: 100%;
+            padding: 14px;
+            border: none;
+            border-radius: 10px;
+            background: #d94f7d;
+            color: white;
+            font-size: 17px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #c43e6c;
+        }
+
+        @media (max-width: 500px) {
+            .doces {
+                grid-template-columns: 1fr;
+            }
+
+            .container {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>🍬 Encomenda de Doces</h1>
+
+    <p class="subtitulo">
+        Preencha os dados para fazer sua encomenda
+    </p>
+
+    <form action="#" method="post">
+
+        <div class="campo">
+            <label for="nome">Nome completo *</label>
+            <input
+                type="text"
+                id="nome"
+                name="nome"
+                required
+            >
+        </div>
+
+        <div class="campo">
+            <label for="telefone">Telefone / WhatsApp *</label>
+            <input
+                type="tel"
+                id="telefone"
+                name="telefone"
+                placeholder="(00) 00000-0000"
+                required
+            >
+        </div>
+
+        <div class="campo">
+            <label for="email">E-mail</label>
+            <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="seuemail@email.com"
+            >
+        </div>
+
+        <div class="campo">
+            <label for="data">Data da entrega *</label>
+            <input
+                type="date"
+                id="data"
+                name="data"
+                required
+            >
+        </div>
+
+        <div class="campo">
+            <label for="horario">Horário desejado *</label>
+            <input
+                type="time"
+                id="horario"
+                name="horario"
+                required
+            >
+        </div>
+
+        <div class="campo">
+            <label>Escolha os doces *</label>
+
+            <div class="doces">
+
+                <div class="doce">
+                    <label>
+                        <input
+                            type="checkbox"
+                            name="doces[]"
+                            value="Brigadeiro"
+                        >
+                        Brigadeiro
+                    </label>
+                </div>
+
+                <div class="doce">
+                    <label>
+                        <input
+                            type="checkbox"
+                            name="doces[]"
+                            value="Beijinho"
+                        >
+                        Beijinho
+                    </label>
+                </div>
+
+                <div class="doce">
+                    <label>
+                        <input
+                            type="checkbox"
+                            name="doces[]"
+                            value="Cajuzinho"
+                        >
+                        Cajuzinho
+                    </label>
+                </div>
+
+                <div class="doce">
+                    <label>
+                        <input
+                            type="checkbox"
+                            name="doces[]"
+                            value="Brigadeiro de morango"
+                        >
+                        Brigadeiro de morango
+                    </label>
+                </div>
+
+                <div class="doce">
+                    <label>
+                        <input
+                            type="checkbox"
+                            name="doces[]"
+                            value="Bem-casado"
+                        >
+                        Bem-casado
+                    </label>
+                </div>
+
+                <div class="doce">
+                    <label>
+                        <input
+                            type="checkbox"
+                            name="doces[]"
+                            value="Trufa"
+                        >
+                        Trufa
+                    </label>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="campo">
+            <label for="quantidade">
+                Quantidade aproximada *
+            </label>
+
+            <select
+                id="quantidade"
+                name="quantidade"
+                required
+            >
+                <option value="">Selecione</option>
+                <option value="10">10 unidades</option>
+                <option value="20">20 unidades</option>
+                <option value="30">30 unidades</option>
+                <option value="50">50 unidades</option>
+                <option value="100">100 unidades</option>
+                <option value="mais-100">
+                    Mais de 100 unidades
+                </option>
+            </select>
+        </div>
+
+        <div class="campo">
+            <label for="pagamento">
+                Forma de pagamento *
+            </label>
+
+            <select
+                id="pagamento"
+                name="pagamento"
+                required
+            >
+                <option value="">Selecione</option>
+                <option value="pix">PIX</option>
+                <option value="dinheiro">Dinheiro</option>
+                <option value="credito">
+                    Cartão de crédito
+                </option>
+                <option value="debito">
+                    Cartão de débito
+                </option>
+            </select>
+        </div>
+
+        <div class="campo">
+            <label for="endereco">
+                Endereço de entrega *
+            </label>
+
+            <textarea
+                id="endereco"
+                name="endereco"
+                rows="3"
+                placeholder="Rua, número, bairro, cidade..."
+                required
+            ></textarea>
+        </div>
+
+        <div class="campo">
+            <label for="observacoes">
+                Observações
+            </label>
+
+            <textarea
+                id="observacoes"
+                name="observacoes"
+                rows="4"
+                placeholder="Tema da festa, sabores, decoração, informações adicionais..."
+            ></textarea>
+        </div>
+
+        <button type="submit">
+            Enviar Encomenda 🍰
+        </button>
+
+    </form>
+
+</div>
+
+</body>
+</html>
